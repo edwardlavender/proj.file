@@ -10,7 +10,7 @@
 #' * [`dirs.copy()`] copies directories (including their contents) from `from` to `to`. 
 #' @return
 #' * [`dirs.create()`] returns `invisible(NULL)`;
-#' * [`dirs.copy()`] returns a [`data.table`] with `from` and `to` columns plus `success` (`TRUE`/`FALSE`);
+#' * [`dirs.copy()`] returns a [`data.table::data.table`] with `from` and `to` columns plus `success` (`TRUE`/`FALSE`);
 #' @author Edward Lavender
 #' @name dirs
 

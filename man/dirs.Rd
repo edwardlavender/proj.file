@@ -23,7 +23,7 @@ dirs.copy(from, to, cl)
 \value{
 \itemize{
 \item \code{\link[=dirs.create]{dirs.create()}} returns \code{invisible(NULL)};
-\item \code{\link[=dirs.copy]{dirs.copy()}} returns a \code{\link{data.table}} with \code{from} and \code{to} columns plus \code{success} (\code{TRUE}/\code{FALSE});
+\item \code{\link[=dirs.copy]{dirs.copy()}} returns a \code{\link[data.table:data.table]{data.table::data.table}} with \code{from} and \code{to} columns plus \code{success} (\code{TRUE}/\code{FALSE});
 }
 }
 \description{
