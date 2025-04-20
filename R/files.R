@@ -17,8 +17,11 @@ NULL
 
 files_source <- function(.sink, .folder = NULL, 
                          recursive = TRUE, ...) {
-  .sink <- file.path(.sink, .folder)
-  files <- list.files(.sink, full.names = TRUE, pattern = "\\.R$", recursive = recursive, ...)
+  if (!is.null(.folder)) {
+    .sink <- file.path(.sink, .folder)
+  }
+  files <- list.files(.sink, full.names = TRUE, 
+                      pattern = "\\.R$", recursive = recursive, ...)
   if (length(files) > 0L) {
     lapply(files, source)
   }
@@ -28,10 +31,13 @@ files_source <- function(.sink, .folder = NULL,
 #' @rdname files
 #' @export
 
-files_source_r <- function(.sink, .folder = NULL, 
+files_source_r <- function(.sink = here_src(), .folder = NULL, 
                            pattern = "\\.R$", recursive = TRUE, ...) {
-  .sink <- file.path(.sink, .folder)
-  files <- list.files(.sink, full.names = TRUE, pattern = pattern, recursive = recursive, ...)
+  if (!is.null(.folder)) {
+    .sink <- file.path(.sink, .folder)
+  }
+  files <- list.files(.sink, full.names = TRUE, 
+                      pattern = pattern, recursive = recursive, ...)
   if (length(files) > 0L) {
     lapply(files, source)
   }
